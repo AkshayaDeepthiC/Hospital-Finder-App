@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.project"
+    android:targetSandboxVersion="1">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <!--    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />-->
+
+
+    <application
+        android:name=".acommon.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".acommon.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".acommon.LoginActivity" />
+        <activity android:name=".attendance.ForgotPasswordActivity" />
+        <activity android:name=".acommon.ForgotPasswordActivity" />
+        <activity
+            android:name=".acommon.NavigationDrawerActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+
+        <activity android:name=".attendance.StudentTextViewActivity" />
+        <activity android:name=".attendance.AddFacultyActivity" />
+        <activity android:name=".attendance.AddStudentsActivity" />
+        <activity android:name=".attendance.GetAttendanceActivity" />
+        <activity android:name=".attendance.StudentHomeActivity" />
+        <activity android:name=".attendance.LoginActivity" />
+        <activity android:name=".attendance.ViewScheduleActivity" />
+        <activity android:name=".attendance.FeesUpdateActivity" />
+        <activity android:name=".attendance.AnnouncementActivity" />
+        <activity android:name=".attendance.ViewNotesActivity" />
+
+
+        <activity
+            android:name=".gym.MainActivity"
+            android:theme="@style/AppThemeDrawer" />
+        <activity android:name=".gym.AboutGymActivity" />
+        <activity android:name=".gym.AdvertisementActivity" />
+        <activity android:name=".gym.DietViewListActivity" />
+        <activity android:name=".gym.HomeActivity" />
+        <activity android:name=".gym.ViewGymPhotoActivity" />
+
+
+        <activity android:name=".bustracking.StudentHomeActivity" />
+        <activity android:name=".bustracking.HomeActivity" />
+        <activity android:name=".bustracking.StudentRegisterActivity" />
+        <activity android:name=".bustracking.ViewStudentsListActivity" />
+
+
+        <activity android:name=".acommon.RegisterActivity" />
+        <activity android:name=".attendance.HomeActivity" />
+        <activity android:name=".attendance.UpdateMarksActivity" />
+        <activity android:name=".attendance.SelectStudentsActivity" />
+        <activity android:name=".attendance.StudentDetailsActivity" />
+        <activity android:name=".attendance.ViewStudentListActivity" />
+        <activity android:name=".attendance.StudentListActivity" />
+        <activity android:name=".attendance.EnterAttendanceDataActivity" />
+        <activity android:name=".attendance.ViewStudentAttendanceActivity" />
+        <activity android:name=".tripinfo.HomeActivity" />
+        <activity android:name=".tripinfo.PackagesListActivity" />
+        <activity android:name=".tripinfo.CategoriesListActivity" />
+        <activity android:name=".tripinfo.CabBookActivity" />
+        <activity android:name=".tripinfo.CommonListViewActivity" />
+        <activity android:name=".tripinfo.MyAccountActivity" />
+        <activity android:name=".tripinfo.PackageInfoActivity" />
+        <activity android:name=".tripinfo.PlaceInfoActivity" />
+        <activity android:name=".tripinfo.PaymentActivity" />
+        <activity android:name=".tripinfo.ViewCustomListActivity" />
+        <activity android:name=".tripinfo.NearbySearchActivity" />
+        <activity android:name=".tripinfo.PlacesListActivity" />
+        <activity android:name=".tripinfo.FavoritesListActivity" />
+        <activity android:name=".tripinfo.EditProfileActivity" />
+        <activity android:name=".tripinfo.HelpActivity" />
+        <activity
+            android:name=".travelguide.PlaceIQRInfoActivity"
+            android:exported="true" />
+        <activity android:name=".travelguide.HomeActivity" />
+        <activity android:name=".travelguide.RouteActivity" />
+        <activity android:name=".travelguide.AddNewPlaceActivity" />
+        <activity android:name=".travelguide.NearbySearchActivity" />
+        <activity android:name=".travelguide.PlaceDetailsActivity" />
+        <activity android:name=".travelguide.TourPlanActivity" />
+        <activity android:name=".travelguide.BudgetActivity" />
+
+        <activity android:name=".salon.BillConfirmationActivity" />
+        <activity android:name=".salon.ConfirmOrderActivity" />
+        <activity
+            android:name=".salon.HomeActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".salon.ViewCartActivity" />
+        <activity android:name=".salon.PaymentActivity" />
+        <activity android:name=".salon.SelectSlotActivity" />
+        <activity android:name=".salon.MyAppointMentActivity" />
+        <activity android:name=".giftstore.LoginActivity" />
+        <activity android:name=".giftstore.RegisterActivity" />
+
+        <activity
+            android:name=".giftstore.HomeActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".giftstore.ItemsListActivity" />
+        <activity android:name=".giftstore.ViewCartActivity" />
+        <activity android:name=".giftstore.BillConfirmationActivity" />
+        <activity android:name=".giftstore.ConfirmOrderActivity" />
+        <activity android:name=".giftstore.MyOrdersActivity" />
+        <activity android:name=".giftstore.PaymentActivity" />
+        <activity android:name=".giftstore.SearchActivity" />
+        <activity android:name=".giftstore.EditProfileActivity" />
+        <activity android:name=".collegeselector.LoginActivity" />
+        <activity android:name=".collegeselector.RegisterActivity" />
+        <activity android:name=".collegeselector.CollegeInfoActivity" />
+        <activity android:name=".collegeselector.HomeActivity" />
+        <activity android:name=".collegeselector.ChangePasswordActivity" />
+
+
+        <activity android:name=".chat.ChatMainActivity" />
+        <activity android:name=".chat.HomeActivity" />
+        <activity android:name=".chat.ViewConversationActivity" />
+        <activity android:name=".chat.CreateChatOneToOneActivity" />
+        <activity android:name=".chat.CreateGroupActivity" />
+
+        <activity android:name=".bangaloreguide.DataListActivity" />
+        <activity android:name=".bangaloreguide.HomeActivity" />
+        <activity android:name=".bangaloreguide.DataDetailsActivity" />
+        <activity android:name=".bangaloreguide.ImageViewActivity" />
+        <activity android:name=".bangaloreguide.LoginActivity" />
+        <activity android:name=".reminder.NotificationActivity" />
+        <activity
+            android:name=".reminder.AndroidTimeActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".reminder.MainActivity" />
+        <activity android:name=".reminder.RemindersListActivity" />
+        <activity android:name=".reminder.admin.AdminHomeActivity" />
+        <activity android:name=".reminder.admin.SettingsActivity" />
+        <activity android:name=".reminder.admin.DeleteUsersActivity" />
+
+
+        <activity android:name=".droneredzone.HomeActivity" />
+        <activity android:name=".droneredzone.ViewRedZonesActivity" />
+        <activity android:name=".droneredzone.AddNewRedzoneActivity" />
+        <activity android:name=".droneredzone.ViewQueryActivity" />
+        <activity android:name=".droneredzone.AddQueryActivity" />
+
+        <activity android:name=".tprobs.BulkSMSActivity" />
+        <activity android:name=".tprobs.FoodListActivity" />
+        <activity android:name=".tprobs.HomeActivity" />
+        <activity android:name=".tprobs.PlaceDetailsActivity" />
+        <activity android:name=".tprobs.VideoPlayActivity" />
+        <activity android:name=".tprobs.ViewCartActivity" />
+        <activity android:name=".tprobs.ViewPlatformActivity" />
+
+        <receiver android:name=".reminder.AlarmReceiver" />
+
+        <service android:name=".reminder.MyAlarmService" />
+
+        <service android:name=".healthchatbot.TTSService" />
+
+        <receiver android:name=".reminder.smsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".foodc.HomeActivity" />
+        <activity android:name=".foodc.BillConfirmationActivity" />
+        <activity android:name=".foodc.ConfirmOrderActivity" />
+        <activity android:name=".foodc.MyOrdersActivity" />
+        <activity android:name=".foodc.PaymentActivity" />
+        <activity android:name=".foodc.ViewCartActivity" />
+        <activity android:name=".foodc.ViewOrdersRiderActivity" />
+        <activity android:name=".foodc.EnterAddressActivity" />
+        <activity android:name=".foodc.AddBuyItemsActivity" />
+        <activity android:name=".foodc.ViewBuyListActivity" />
+        <activity android:name=".foodc.RecipeActivity" />
+        <activity android:name=".foodc.ViewShopsActivity" />
+        <activity android:name=".foodc.ViewOffersActivity" />
+
+        <activity android:name=".library.ViewPDFActivity" />
+        <activity android:name=".library.HomeActivity"
+            android:theme="@style/AppThemeDrawer"
+            />
+
+        <activity android:name=".library.BookDetailsActivity" />
+        <activity android:name=".library.AddBookActivity" />
+        <activity android:name=".library.ViewBooksActivity"
+            android:theme="@style/AppThemeDrawer"
+            />
+
+
+        <activity android:name=".covid.HomeActivity" />
+        <activity android:name=".covid.ViewDistrictListActivity" />
+        <activity android:name=".covid.AdminHomeActivity" />
+
+
+        <activity android:name=".feespayment.StudentDetailsActivity" />
+        <activity android:name=".feespayment.HomeActivity" />
+        <activity android:name=".feespayment.AddStudentsActivity" />
+        <activity android:name=".feespayment.ViewStudentsActivity" />
+
+        <activity android:name=".covid.ViewDistrictVaccineDistriActivity" />
+
+        <activity android:name=".kisanmitra.AdminHomeCropsActivity" />
+        <activity android:name=".kisanmitra.SchemesCropActivity" />
+
+        <activity android:name=".kisanmitra.FarmersHomeActivity" />
+        <activity android:name=".kisanmitra.RegisterCropActivity" />
+        <activity android:name=".kisanmitra.ViewMarketRateActivity" />
+        <activity android:name=".kisanmitra.YoutubePlayActivity" />
+        <activity android:name=".kisanmitra.ViewCropsActivity" />
+        <activity android:name=".kisanmitra.AddBlogActivity" />
+        <activity android:name=".kisanmitra.ViewBlogsActivity" />
+        <activity android:name=".kisanmitra.BlogsDetailsActivity" />
+        <activity android:name=".kisanmitra.PostEquipmentsActivity" />
+        <activity android:name=".kisanmitra.OLXPostViewActivity" />
+        <activity android:name=".kisanmitra.CropYeildActivity" />
+        <activity android:name=".kisanmitra.ViewItemListActivity" />
+        <activity android:name=".kisanmitra.AddItemsActivity" />
+        <activity android:name=".kisanmitra.ViewRegistedUsersActivity" />
+        <activity android:name=".kisanmitra.OneShotPreviewActivity" />
+        <activity android:name=".kisanmitra.NearbyMarketsListActivity" />
+        <activity android:name=".kisanmitra.blogcomments.ViewCommentsListActivity" />
+        <activity android:name=".kisanmitra.cropprediction.CropPredictionActivity" />
+        <activity android:name=".kisanmitra.AdminHomeActivity" />
+        <activity android:name=".kisanmitra.cropprediction.PostCropsActivity" />
+        <activity android:name=".kisanmitra.cropprediction.ViewCropsListActivity" />
+        <activity android:name=".kisanmitra.cropprediction.FeedbackActivity" />
+        <activity android:name=".kisanmitra.cropprediction.ProfileActivity" />
+        <activity android:name=".kisanmitra.cropprediction.UserHomeActivity" />
+        <activity android:name=".kisanmitra.cropprediction.KisanHomeActivity" />
+        <activity android:name=".kisanmitra.cropprediction.ViewFeedbackActivity" />
+
+
+        <activity android:name=".ambulance.UserRegisterActivity" />
+        <activity android:name=".ambulance.MainMapsActivity"></activity>
+        <activity android:name=".ambulance.FileSelecter"></activity>
+        <activity android:name=".ambulance.BookingActivity"></activity>
+        <activity android:name=".ambulance.ViewBookingsActivity"></activity>
+        <activity android:name=".ambulance.MyBookingsActivity"></activity>
+        <activity android:name=".ambulance.BookingAcceptActivity"></activity>
+        <activity android:name=".ambulance.NearbyHospitalActivity"></activity>
+        <activity android:name=".ambulance.HospitalListActivity"></activity>
+        <activity android:name=".ambulance.HospitalRegisterActivity"></activity>
+        <activity android:name=".ambulance.HospitalReviewActivity"></activity>
+        <activity android:name=".ambulance.HomeActivity"></activity>
+
+
+        <activity android:name=".kisanprediction.EmpHomeActivity"></activity>
+        <activity android:name=".kisanprediction.EmpLoginActivity"></activity>
+        <activity android:name=".kisanprediction.EmpRegisterActivity"></activity>
+        <activity android:name=".kisanprediction.FarmersHomeActivity"></activity>
+        <activity android:name=".kisanprediction.FarmerLoginActivity"></activity>
+        <activity android:name=".kisanprediction.FarmerRegisterActivity"></activity>
+        <activity android:name=".kisanprediction.HomeActivity"></activity>
+        <activity android:name=".kisanprediction.PricePredictionActivity"></activity>
+
+        <activity android:name=".garbage.HomeActivity"></activity>
+
+        <activity android:name=".recruitment.AddJobActivity"></activity>
+        <activity android:name=".recruitment.HomeActivity"></activity>
+        <activity android:name=".recruitment.JobDetailsActivity"></activity>
+        <activity android:name=".recruitment.ViewAppliedStudentsActivity"></activity>
+        <activity android:name=".recruitment.ViewJobsActivity"></activity>
+        <activity android:name=".recruitment.ViewFeedbackActivity"></activity>
+        <activity android:name=".recruitment.QuizActivity"></activity>
+
+
+        <activity android:name=".healthchatbot.MainActivity"></activity>
+        <activity android:name=".healthchatbot.NearbySearchActivity"></activity>
+        <activity android:name=".healthchatbot.PatientHomeActivity"></activity>
+        <activity android:name=".healthchatbot.ChatBotActivity"></activity>
+        <activity android:name=".healthchatbot.SymptomsActivity"></activity>
+        <activity android:name=".healthchatbot.AddDiseaseActivity"></activity>
+
+        <activity
+            android:name=".inventory.AddItemActivity"
+            android:exported="true"></activity>
+        <activity android:name=".inventory.HomeActivity"></activity>
+        <activity android:name=".inventory.ViewReportActivity"></activity>
+
+        <activity android:name=".milkdelivery.RobotIOTControlActivity"></activity>
+        <activity android:name=".milkdelivery.HomeActivity"></activity>
+        <activity
+            android:name=".milkdelivery.PaymentActivity"
+            android:exported="true"></activity>
+
+
+        <activity android:name=".bloodbank.BankHomeActivity"></activity>
+        <activity android:name=".bloodbank.BankRequestBloodActivity"></activity>
+        <activity android:name=".bloodbank.HomeActivity"></activity>
+        <activity android:name=".bloodbank.LoginActivity"></activity>
+        <activity android:name=".bloodbank.RegisterActivity"></activity>
+        <activity android:name=".bloodbank.RequestBloodActivity"></activity>
+        <activity android:name=".bloodbank.UpdateprofileActivity"></activity>
+        <activity android:name=".bloodbank.ViewNotificationsActivity"></activity>
+
+        <activity android:name=".travelguide.StartCarPoolActivity"></activity>
+        <activity android:name=".travelguide.PaymentActivity"></activity>
+        <activity android:name=".travelguide.ExpenseListActivity"></activity>
+
+
+        <activity
+            android:name=".scanner.CaptureActivity"
+            android:exported="true"
+            android:icon="@drawable/scannericon"
+            android:label="@string/app_name">
+
+        </activity>
+
+
+        <activity android:name=".energymeter.HomeActivity" />
+        <activity android:name=".bulksms.BulkSMSActivity" />
+
+        <activity android:name=".virtualtraffic.HomeActivity" />
+
+        <activity android:name=".atm.GraphicalActivity" />
+        <activity android:name=".atm.MainActivity" />
+        <activity android:name=".atm.TransferAmountActivity" />
+        <activity android:name=".atm.HomeActivity" />
+
+        <activity
+            android:name=".videoroute.VideoPlayActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".videoroute.AddFeedbackActivity" />
+        <activity android:name=".videoroute.AddLecturerActivity" />
+        <activity android:name=".videoroute.HomeActivity" />
+        <activity android:name=".videoroute.ViewStudentsActivity" />
+        <activity android:name=".videoroute.ViewFeedbackActivity" />
+        <activity android:name=".videoroute.AdminHomeActivity" />
+        <activity android:name=".videoroute.AddStudentActivity" />
+        <activity android:name=".videoroute.StudentListActivity" />
+
+        <activity android:name=".roadsideassistance.HomeActivity" />
+        <activity android:name=".roadsideassistance.PoliceCustomListActivity" />
+        <activity android:name=".roadsideassistance.PostViolationActivity" />
+        <activity android:name=".roadsideassistance.UpdatePhoneActivity" />
+        <activity android:name=".roadsideassistance.ViewFinesActivity" />
+        <activity android:name=".roadsideassistance.ViewDocsActivity" />
+
+
+        <activity android:name=".alumni.AddAlumniActivity" />
+        <activity android:name=".alumni.AddFeedbackActivity" />
+        <activity android:name=".alumni.AddStudentActivity" />
+        <activity android:name=".alumni.HomeActivity" />
+        <activity android:name=".alumni.IssueBookActivity" />
+        <activity android:name=".alumni.NotifyAlumniActivity" />
+        <activity android:name=".alumni.PostJobsActivity" />
+        <activity android:name=".alumni.ViewFeedbackActivity" />
+        <activity android:name=".alumni.ViewJobsActivity" />
+        <activity android:name=".alumni.ViewLibraryBooksActivity" />
+
+        <activity
+            android:name=".singnature.ConcatenateFIleActivity"
+            android:screenOrientation="landscape" />
+
+        <activity android:name=".singnature.ReceiverActivity" />
+        <activity android:name=".singnature.SenderActivity" />
+        <activity android:name=".singnature.HomeActivity" />
+        <activity android:name=".singnature.NewsListActivity" />
+        <activity android:name=".singnature.NewsDetailsActivity" />
+
+        <activity android:name=".civic.HomeActivity" />
+        <activity android:name=".civic.PostProblemActivity" />
+        <activity android:name=".civic.ViewProblemsListActivity" />
+
+        <activity android:name=".voter.admin.AddCandidatesActivity" />
+        <activity android:name=".voter.admin.CandidatesListActivity" />
+        <activity android:name=".voter.admin.HomeActivity" />
+        <activity android:name=".voter.admin.LoginActivity" />
+        <activity android:name=".voter.admin.VoteCountActivity" />
+        <activity android:name=".voter.admin.VoterListActivity" />
+
+        <activity android:name=".voter.FingerprintActivity" />
+        <activity android:name=".voter.HomeActivity" />
+        <activity android:name=".voter.LoginActivity" />
+        <activity android:name=".voter.RegisterActivity" />
+
+        <activity android:name=".medicate.HomeActivity" />
+        <activity android:name=".medicate.BMICalculatorActivity" />
+        <activity android:name=".medicate.ViewPatientActivity" />
+        <activity android:name=".medicate.RegisterActivity" />
+
+        <activity android:name=".optraev.HomeActivity" />
+        <activity android:name=".optraev.QRCodeDisplayActivity" />
+        <activity android:name=".optraev.LoginActivity" />
+        <activity android:name=".optraev.NewCustomerActivity" />
+        <activity android:name=".optraev.ViewUsersListActivity" />
+
+        <activity android:name=".construction.EngineerRegisterActivity" />
+        <activity android:name=".construction.HomeActivity" />
+        <activity android:name=".construction.ViewItemsListActivity" />
+        <activity android:name=".construction.ConstructionCostActivity" />
+
+        <activity android:name=".globalnest.QRGeneratorTransaction" />
+
+        <activity android:name=".elibrary.HomeActivity" />
+        <activity android:name=".elibrary.PaymentActivity" />
+
+        <activity android:name=".medibot.ViewDataActivity" />
+        <activity android:name=".medibot.UploadDataActivity" />
+        <activity android:name=".medibot.HomeActivity" />
+
+        <activity android:name=".fooddonor.DonorPostViewActivity" />
+        <activity android:name=".fooddonor.PostFoodDonationActivity" />
+        <activity android:name=".fooddonor.HomeActivity" />
+
+        <activity android:name=".hostel.AddRoomsActivity" />
+        <activity android:name=".hostel.ViewRoomsListActivity" />
+        <activity android:name=".hostel.AdminHomeActivity" />
+
+        <service android:name=".voice.MyAlarmService" />
+
+        <activity android:name=".coliving.RegisterActivity" />
+        <activity android:name=".coliving.HomeActivity" />
+        <activity android:name=".coliving.ChatboxActivity" />
+        <activity android:name=".coliving.SearchPartnerActivity" />
+        <activity android:name=".coliving.ViewMatchesListActivity" />
+        <activity android:name=".coliving.ProfileActivity" />
+
+        <activity android:name=".farmersell.FarmerActivity" />
+        <activity android:name=".farmersell.HomeActivity" />
+        <activity android:name=".farmersell.LenderActivity" />
+
+        <activity android:name=".hospitalfinder.NearbyHospitalActivity" />
+        <activity android:name=".hospitalfinder.SetAppointmentActivity" />
+        <activity android:name=".hospitalfinder.ViewAppointmentsListActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>
